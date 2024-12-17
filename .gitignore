@@ -1,0 +1,14 @@
+# Geçici derleme dosyaları
+build/
+dist/
+*.egg-info/
+
+# __pycache__ ve derlenmiş dosyalar
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Sanal ortam klasörleri
+venv/
+.env/
