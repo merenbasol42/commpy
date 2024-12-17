@@ -1,7 +1,8 @@
 from ..msg_if import MsgI
+from ..std_ifs.msg import Empty
 from .utils import *
 
-class __Event:
+class _Event:
     def __init__(self, name: str):
         self.name: str = name
         self.subs: list = []
@@ -16,7 +17,7 @@ class __Event:
         for sub in self.subs: 
             sub(*args)
 
-class Event(__Event):
-    def __init__(self, name, msg_type: type[MsgI]):
+class Event(_Event):
+    def __init__(self, name, msg_type: type[MsgI] = Empty):
         self.type = msg_type
         super().__init__(name)

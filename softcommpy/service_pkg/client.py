@@ -6,7 +6,7 @@ from typing import Type
 
 ZZZ_TIME: float = 0.05
 
-class __Client:
+class _Client:
     def __init__(self, name: str = "nameless client"):
         self.e_call: Event = Event(f"{name} client call")
         self.response = None
@@ -18,7 +18,7 @@ class __Client:
             time.sleep(ZZZ_TIME)
         return self.response
 
-class Client(__Client):
+class Client(_Client):
     def __init__(self, srv_type: Type[SrvMsgI], name = "nameless client"):
         self.type: SrvMsgI = srv_type
         super().__init__(name)
