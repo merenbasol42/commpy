@@ -1,0 +1,1 @@
+class MsgI: pass # Message Interface
