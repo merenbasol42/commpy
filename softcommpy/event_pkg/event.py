@@ -1,6 +1,6 @@
 from ..msg_if import MsgI
 from ..std_ifs.msg import Empty
-from .utils import *
+from ..utils import AlreadySubscribedError, NoConnectionError
 
 class _Event:
     def __init__(self, name: str):
@@ -13,7 +13,10 @@ class _Event:
 
         self.subs.append(cb)
 
-    def trigger(self, *args, triggerer: str = "nameless triggerer"):
+    def trigger(self, *args, triggerer: str = "nameless triggerer", safe = True):
+        if safe: 
+            if len(self.subs) == 0:
+                raise NoConnectionError("this event has not a connection but want to trigger")
         for sub in self.subs: 
             sub(*args)
 

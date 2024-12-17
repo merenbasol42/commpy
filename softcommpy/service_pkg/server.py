@@ -8,7 +8,7 @@ class _Server:
         self.name = name
     
     def serve(self, *args):
-        self.cb(*args)
+        return self.cb(*args)
 
 class Server(_Server):
     def __init__(self, srv_type: Type[SrvMsgI], cb, name: str = "nameless server"):

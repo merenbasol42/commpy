@@ -1,9 +1,9 @@
-from ...service_pkg.srv_if import SrvMsgI as __SrvMsgI
-from ..msg import ListInt as __ListInt
-from ..msg import Int as __Int 
+from ...service_pkg.srv_if import SrvMsgI as _SrvMsgI
+from ..msg import ListInt as _ListInt
+from ..msg import Int as _Int 
 
-class Add(__SrvMsgI):
+class Add(_SrvMsgI):
     def __init__(self):
-        self.request: __ListInt = __ListInt()
-        self.response: __Int = __Int()
+        self.request: _ListInt = _ListInt()
+        self.response: _Int = _Int()
         super().__init__()

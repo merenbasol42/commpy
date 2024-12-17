@@ -10,8 +10,8 @@ class _Service:
         self.clients: list[_Client] = []
 
     def __cb(self, index: int, *args):
-        response = self.server.cb(*args)
-        self.clients[index].response = response
+        response = self.server.serve(*args)
+        self.clients[index]._response = response
 
     def add_client(self, client: _Client):
         index = len(self.clients)
