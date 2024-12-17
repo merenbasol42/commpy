@@ -8,7 +8,7 @@ setup(
     description='Python iletişim ve servis paketi',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/kullanici/softcommpy',
+    url='https://github.com/merenbasol42/softcommpy',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
