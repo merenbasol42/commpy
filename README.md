@@ -1,7 +1,7 @@
-# SoftCommPy
+# commpy
 
 ## Açıklama
-SoftCommPy, Python için gelişmiş bir iletişim ve servis paketidir. Farklı servis ve mesajlaşma altyapıları için kullanışlı araçlar sağlar.
+commpy, Python için gelişmiş bir iletişim ve servis paketidir. Farklı servis ve mesajlaşma altyapıları için kullanışlı araçlar sağlar.
 
 ## Özellikler
 - Esnek servis altyapısı
@@ -10,7 +10,7 @@ SoftCommPy, Python için gelişmiş bir iletişim ve servis paketidir. Farklı s
 
 ## Kurulum
 ```bash
-pip3 install softcommpy
+pip3 install commpy
 ```
 
 ## Kullanım

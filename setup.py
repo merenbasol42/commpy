@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='softcommpy',
+    name="commpy",
     version='0.1.0',
     author='Mustafa Eren BAŞOL',
     author_email='merenbasol@gmail.com',
-    description='Python iletişim ve servis paketi',
+    url='https://github.com/merenbasol42/commpy',
+    description='Python yazılım içi haberleşme paketi',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/merenbasol42/softcommpy',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -34,6 +34,6 @@ setup(
     },
     keywords='python communication service messaging',
     project_urls={
-        'Source': 'https://github.com/merenbasol42/softcommpy',
+        'Source': 'https://github.com/merenbasol42/commpy',
     },
 )

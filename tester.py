@@ -1,5 +1,5 @@
-from softcommpy.service_pkg import Server, Client, Service
-from softcommpy.std_ifs.srv import Add
+from commpy.service_pkg import Server, Client, Service
+from commpy.std_ifs.srv import Add
 
 def srv_cb(msg: Add):
     count: int = 0
