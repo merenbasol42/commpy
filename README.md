@@ -1,20 +1,36 @@
 # commpy
 
-## Açıklama
+## 🇹🇷 Türkçe Açıklama / 🇬🇧 English Description
+
+### 🇹🇷 Açıklama
 commpy, Python için gelişmiş bir iletişim ve servis paketidir. Farklı servis ve mesajlaşma altyapıları için kullanışlı araçlar sağlar.
 
-## Özellikler
-- Esnek servis altyapısı
-- Gelişmiş mesajlaşma arabirimi
-- Hata ayıklama ve olay yönetimi araçları
+### 🇬🇧 Description
+commpy is an advanced communication and service package for Python. It provides useful tools for different service and messaging infrastructures.
 
-## Kurulum
+## 🇹🇷 Özellikler / 🇬🇧 Features
+
+### 🇹🇷 
+- Olay tabanlı yazılım iletişimi
+- Servis altyapısı
+- Event altyapısı
+- Farklı mesaj tipleri ile mesajlaşma
+
+### 🇬🇧
+- Event-based software communication
+- Service infrastructure
+- Event infrastructure
+- Messaging with different message types
+
+## 🇹🇷 Kurulum / 🇬🇧 Installation
 ```bash
 pip3 install commpy
 ```
 
-## Kullanım
-Henüz detaylı kullanım kılavuzu hazırlanmamıştır.
+## 🇹🇷 Kullanım / 🇬🇧 Usage
+🇹🇷 Henüz detaylı kullanım kılavuzu hazırlanmamıştır.
+🇬🇧 Detailed usage guide is not yet prepared.
 
-## Lisans
-MIT Lisansı altında dağıtılmaktadır.
+## 🇹🇷 Lisans / 🇬🇧 License
+🇹🇷 MIT Lisansı altında dağıtılmaktadır.
+🇬🇧 Distributed under the MIT License.
