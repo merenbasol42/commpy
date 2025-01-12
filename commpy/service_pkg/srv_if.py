@@ -1,5 +1,5 @@
 # srv_if.py
-from ..msg_if import MsgI
+from ..event_pkg.msg_if import MsgI
 
 class Request(MsgI):
     def __init__(self, **kwargs):

@@ -1,5 +1,5 @@
 from typing import Callable, Generic, Type, TypeVar
-from ..msg_if import MsgI
+from .msg_if import MsgI
 from ..std_ifs.msg import Empty
 from ..utils import AlreadySubscribedError, NoConnectionError
 

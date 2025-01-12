@@ -1,9 +1,13 @@
 from ...service_pkg.srv_if import SrvMsgI as _SrvMsgI
-from ..msg import ListInt as _ListInt
-from ..msg import Int as _Int 
 
 class Add(_SrvMsgI):
-    def __init__(self):
-        self.request: _ListInt = _ListInt()
-        self.response: _Int = _Int()
-        super().__init__()
+    class Request(_SrvMsgI.Request):
+        def __init__(self, numbers: list[int] = list[int]):
+            self.numbers: list[int]
+            super().__init__(numbers=numbers)
+
+    class Response(_SrvMsgI.Response):
+        def __init__(self, sum: int = int):
+            self.sum: int
+            super().__init__(sum=sum)
+

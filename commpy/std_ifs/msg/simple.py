@@ -1,4 +1,4 @@
-from ...msg_if import MsgI
+from ...event_pkg.msg_if import MsgI
 from typing import Generic, TypeVar
 
 T = TypeVar('T')
