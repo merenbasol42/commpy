@@ -3,6 +3,7 @@ from .client import _Client, Client
 from .server import _Server, Server
 from .srv_if import SrvMsgI
 
+# This class manages a service, which consists of a server and multiple clients.
 class _Service:
     def __init__(self, name: str):
         self.name = name
