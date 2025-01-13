@@ -32,17 +32,8 @@ class ExampleService:
         self.service.add_client(self.b.client)
 
 def test():
-    # a = [1,2,3]
-    # b = a
-    # a.append(4)
-    # print(b)
-    # print(a)
-    # print(a==b)
-    
     c = ExampleService()
     c.b.call_trigger()
-
-
 
 if __name__ == "__main__":
     test()
