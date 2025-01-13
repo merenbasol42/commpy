@@ -1,5 +1,5 @@
 from typing import TypeVar, Generic, Type
-from ..utils import AlreadyHasAServer, UnmatchingMsgType, type_check
+from ..utils import AlreadyHasAServer, UnmatchingMsgType, type_check, NoConnectionError
 from .client import _Client, Client
 from .server import _Server, Server
 from .srv_if import SrvMsgI
@@ -42,9 +42,13 @@ class Service(_Service, Generic[T]):
 
     def _cb(self, index: int, req: TRequest):
         res = self.server.type.Response()
+        if self.server is None:
+            raise NoConnectionError(
+                f"[on {self.name} named service] server is None"
+            )
         if res != self.server.serve(req, res):
             raise Exception(
-                f"serve method did not return response what given him"
+                f"[on {self.name} named service] serve method did not return response what given him"
             )
         type_check(self.type.Response, res)
         self.clients[index].response = res

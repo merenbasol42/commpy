@@ -8,12 +8,13 @@ ZZZ_TIME: float = 0.05
 
 class _Client:
     def __init__(self, name: str = "nameless client"):
+        self.name: str = name
         self.e_call: Event = Event(f"__{name} client call__")
         self.response = None
 
     def call_sync(self, *args):
         if len(self.e_call.get_subs()) == 0: 
-            raise NoConnectionError("this client has not connection but want to call")
+            raise NoConnectionError(f"this client(name: {self.name}) has not connection but want to call")
         self.response = None
         self.e_call.trigger(*args)
         while self.response == None:
