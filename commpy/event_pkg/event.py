@@ -18,7 +18,7 @@ class _Event:
             name (str): The name of the event.
         """
         self.name: str = name
-        self.subscribers: list[Callable] = []
+        self._subs: list[Callable] = []
 
     def subscribe(self, callback: Callable, name: str = "Unnamed Subscriber"):
         """
@@ -31,10 +31,10 @@ class _Event:
         Raises:
             AlreadySubscribedError: If the subscriber is already registered.
         """
-        if callback in self.subscribers:
+        if callback in self._subs:
             raise AlreadySubscribedError(f"Callback '{name}' already subscribed to the event '{self.name}'.")
 
-        self.subscribers.append(callback)
+        self._subs.append(callback)
 
     def trigger(self, *args, triggerer: str = "Unnamed Triggerer", safe: bool = True):
         """
@@ -48,14 +48,17 @@ class _Event:
         Raises:
             NoConnectionError: If no subscribers exist and safe=True.
         """
-        if safe and not self.subscribers:
+        if safe and not self._subs:
             raise NoConnectionError(f"Event '{self.name}' triggered by '{triggerer}' has no subscribers.")
 
-        for subscriber in self.subscribers:
+        for subscriber in self._subs:
             try:
                 subscriber(*args)
             except Exception as e:
                 print(f"Error while notifying subscriber: {e}")
+
+    def get_subs(self):
+        return self._subs.copy()
 
 class Event(_Event, Generic[T]):
     """

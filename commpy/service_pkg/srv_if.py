@@ -1,21 +1,15 @@
 # srv_if.py
 from ..event_pkg.msg_if import MsgI
 
-class Request(MsgI):
-    def __init__(self, **kwargs):
-        super().__init__()
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-class Response(MsgI):
-    def __init__(self, **kwargs):
-        super().__init__()
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
 class SrvMsgI:
-    class Request(Request):
-        pass
+    class Request(MsgI):
+        def __init__(self, **kwargs):
+            super().__init__()
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
-    class Response(Response):
-        pass
+    class Response(MsgI):
+        def __init__(self, **kwargs):
+            super().__init__()
+            for key, value in kwargs.items():
+                setattr(self, key, value)
