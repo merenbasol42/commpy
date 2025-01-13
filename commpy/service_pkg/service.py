@@ -1,11 +1,9 @@
 from typing import TypeVar, Generic, Type
-from ..utils import AlreadyHasAServer, UnmatchingMsgType, type_check, NoConnectionError
+from ..utils import AlreadyHasAServer, UnmatchingMsgType, NoConnectionError, type_check
 from .client import _Client, Client
 from .server import _Server, Server
 from .srv_if import SrvMsgI
 
-
-# This class manages a service, which consists of a server and multiple clients.
 class _Service:
     def __init__(self, name: str):
         self.name = name
@@ -28,6 +26,7 @@ class _Service:
                 "This service already has a server"
             )
         self.server = server
+
 
 
 T = TypeVar('T', bound=SrvMsgI)
