@@ -119,3 +119,5 @@ if __name__ == "__main__":
     # Trigger the event.
     test_message = CustomMessage("Hello, World!")
     event.trigger(test_message, triggerer="Main Function")
+
+class NonBoundEvent(_Event): pass

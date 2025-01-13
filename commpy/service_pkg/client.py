@@ -1,6 +1,6 @@
 import time
 from ..utils import NoConnectionError, type_check
-from ..event_pkg import Event
+from ..event_pkg import NonBoundEvent
 from .srv_if import SrvMsgI
 from typing import Type, Generic, TypeVar
 
@@ -9,7 +9,7 @@ ZZZ_TIME: float = 0.05
 class _Client:
     def __init__(self, name: str = "nameless client"):
         self.name: str = name
-        self.e_call: Event = Event(f"__{name} client call__")
+        self.e_call: NonBoundEvent = NonBoundEvent(f"__{name} client call__")
         self.response = None
 
     def call_sync(self, *args):
